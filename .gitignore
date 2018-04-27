@@ -3,3 +3,4 @@ venv
 .DS_Store
 .env
 *.ipynb
+.ipynb_checkpoints
