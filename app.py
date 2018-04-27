@@ -9,9 +9,6 @@ app = dash.Dash()
 server = app.server
 app.title = 'Interactive Dashboards | Dashboardom'
 
-app.scripts.append_script({
-    'external_url': '//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons'
-})
 
 link_style = {'text-decoration': 'underline',
               'color': '#0A4DCC'}
@@ -136,5 +133,12 @@ def change_url_based_on_dropdown(value):
     if value:
         return '/' + value
 
+app.scripts.append_script({
+    'external_url': [
+        '//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons',
+        'https://cdn.rawgit.com/eliasdabbas/dashboardom/1ec39a7b/scripts/gtag.js',
+    ]
+})
+
 if __name__ == '__main__':
-    app.run_server()    
+    app.run_server()
