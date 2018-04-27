@@ -1,0 +1,12 @@
+dashboard,data,data_link,description,git_repo,name,tags
+advertools,NA,NA,Productivity and analysis tools for online marketing,https://github.com/eliasdabbas/advertools_app,advertools,"advertising, tools, marketing, adwords, bingads"
+boxofficemojo,BoxofficeMojo,http://www.boxofficemojo.com/alltime/domestic.htm,BoxofficeMojo domestic dox-office data all-time,https://github.com/eliasdabbas/boxofficemojo,BoxofficeMojo,"movies, hollywood, data-viz"
+health-spending,CIA World Factbook,https://www.cia.gov/library/publications/the-world-factbook/fields/2225.html,Healthcare spending by country in 2014,https://github.com/eliasdabbas/health_spending,Healthcare Spending 2014,"healthcare, world, cia-factbook"
+life-exp,CIA World Factbook,https://www.cia.gov/library/publications/the-world-factbook/fields/2102.html,Life expectancy per country in 2017,https://github.com/eliasdabbas/life_expectancy,Life Expectancy 2017,"population, age, world, cia-factbook"
+massacres,Wikipedia,https://en.wikipedia.org/wiki/List_of_events_named_massacres,Wikipedia's list of events named massacres,https://github.com/eliasdabbas/wikipedia_list_of_massacres,World Massacres,"terrorism, massacres, wikipedia, world"
+median-age-world,CIA World Factbook,https://www.cia.gov/library/publications/the-world-factbook/fields/2010.html,Median age and age distribution by country in 2017,https://github.com/eliasdabbas/median_age_dashboard,Median Age 2017,"population, age, world, cia-factbook"
+migration-by-country,CIA World Factbook,https://www.cia.gov/library/publications/the-world-factbook/fields/2112.html,Net migration by country in 2017,https://github.com/eliasdabbas/migration_dashboard,Migration Stats 2017,"migration, world, cia-factbook"
+mothersday-map,Wikipedia,https://en.wikipedia.org/wiki/Mother%27s_Day,Mothers day celebrations in the world,https://github.com/eliasdabbas/mothers_day,Mothers Day Celebrations,"world, mothers, wikipedia"
+pop-growth,CIA World Factbook,https://www.cia.gov/library/publications/the-world-factbook/fields/2002.html,Population growth per country in 2017,https://github.com/eliasdabbas/population_growth,Population Growth 2017,"population, world, cia-factbook"
+terrorism,START Consortium,https://www.kaggle.com/START-UMD/gtd,World terrorist attacks during 1970 - 2016,https://github.com/eliasdabbas/terrorism,Global Terrorism Database,"terrorism, world"
+dashboardom,NA,NA,This website!,https://github.com/eliasdabbas/dashboardom,Dashboardom,"tools, website"
