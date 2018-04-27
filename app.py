@@ -99,11 +99,7 @@ app.layout = html.Div([
             html.Div([
                 html.Div('Connect', style={'font-size': 25}),
                 html.P(),
-                html.A('@eliasdabbas', href='https://twitter.com/eliasdabbas'), 
-                html.P(),
-                html.A('GitHub', href='https://github.com/eliasdabbas'),
-                html.P(),
-                html.A('LinkedIn', href='https://linkedin.com/in/eliasdabbas')
+                html.Div(className='sharethis-inline-follow-buttons'),
             ], style={'width': '20%', 'display': 'inline-block',
                       'float': 'right', 'margin-right': '50%'})
         ]),
