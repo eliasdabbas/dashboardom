@@ -11,7 +11,7 @@ dashboard_df = pd.DataFrame({
         'mothersday-map',
         'pop-growth',
         'terrorism',
-        'dashboardom'
+        "",
     ],
     'name': [
         'advertools',
