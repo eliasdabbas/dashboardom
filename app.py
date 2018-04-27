@@ -112,21 +112,22 @@ app.layout = html.Div([
 @app.callback(Output('dashboard_components', 'hidden'),
              [Input('url', 'pathname')])
 def show_hide_links_to_dashboards(pathname):
-    if pathname and pathname[1:] in dashboard_df['dashboard'].values:
+    if pathname != '/' and pathname[1:] in dashboard_df['dashboard'].values:
         return True
     return False
 
 @app.callback(Output('iframe', 'hidden'),
              [Input('url', 'pathname')])
 def show_hide_iframe(pathname):
-    if pathname and pathname[1:] in dashboard_df['dashboard'].values:
+    print(pathname)
+    if pathname != '/' and pathname[1:] in dashboard_df['dashboard'].values:
         return False
     return True
 
 @app.callback(Output('iframe', 'src'),
              [Input('url', 'pathname')])
 def get_iframe_src(pathname):
-    if pathname and pathname[1:] in dashboard_df['dashboard'].values:
+    if pathname != '/' and pathname[1:] in dashboard_df['dashboard'].values:
         return 'https://' + pathname[1:] + '.herokuapp.com'
     
 @app.callback(Output('url', 'pathname'),
