@@ -16,7 +16,7 @@ app.scripts.append_script({
 link_style = {'text-decoration': 'underline',
               'color': '#0A4DCC'}
 
-dashboard_df = pd.read_csv('data/dashboards_df.csv')
+dashboard_df = pd.read_csv('data/dashboards_df.csv', keep_default_na=False)
 
 dashboard_components = html.Div([
     html.Div([
@@ -65,8 +65,9 @@ app.layout = html.Div([
         html.P(), html.P(), html.P(),
         dcc.Dropdown(id='dashboards_dropdown',
                      placeholder='Explore other dashboards:',
-                     options=[{'label': d, 'value': d}
-                              for d in dashboard_df['name']]),
+                     options=[{'label': name, 'value': dashboard}
+                              for name,dashboard in zip(dashboard_df['name'], 
+                                                        dashboard_df['dashboard'])]),
     ], style={'width': '30%', 'margin-right': '10%', 'float': 'right',
               'margin-top': -90, 'text-color': '#ff0000'}),
         
