@@ -68,7 +68,7 @@ app.layout = html.Div([
     ], style={'width': '30%', 'margin-right': '10%', 'float': 'right',
               'margin-top': -90, 'text-color': '#ff0000'}),
         
-    dcc.Location(id='url', refresh=False),
+    dcc.Location(id='url', refresh=True),
     html.Div(id='content'),
     
     html.P(), html.P(),
@@ -130,8 +130,6 @@ def get_iframe_src(pathname):
              [Input('dashboards_dropdown', 'value')])
 def change_url_based_on_dropdown(value):
     if value is not None:
-        print(value)
-        print('/' + value)
         return '/' + value
 
 app.scripts.append_script({
