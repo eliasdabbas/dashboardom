@@ -129,7 +129,9 @@ def get_iframe_src(pathname):
 @app.callback(Output('url', 'pathname'),
              [Input('dashboards_dropdown', 'value')])
 def change_url_based_on_dropdown(value):
-    if value:
+    if value is not None:
+        print(value)
+        print('/' + value)
         return '/' + value
 
 app.scripts.append_script({
