@@ -73,7 +73,7 @@ app.layout = html.Div([
     
     html.P(), html.P(),
     html.Iframe(id='iframe',
-                style={'width': '92%', 'height': 1000, 'border': 'none', 
+                style={'width': '92%', 'height': 1000, 'border': 'none',
                        'scrolling': 'no', 'margin-left': '4%'}),
     
     html.Div(id='dashboard_components',
@@ -103,7 +103,7 @@ app.layout = html.Div([
     ], style={'margin-left': '10%', 'height': 250}),
     html.P(), html.P(), html.P(), html.P(),
     
-    ], style={'font-family': 'Palatino', 'background-color': '#eeeeee'})    
+    ], style={'font-family': 'Palatino', 'background-color': '#fafafa'})
 
 
 @app.callback(Output('dashboard_components', 'hidden'),
@@ -116,7 +116,6 @@ def show_hide_links_to_dashboards(pathname):
 @app.callback(Output('iframe', 'hidden'),
              [Input('url', 'pathname')])
 def show_hide_iframe(pathname):
-    print(pathname)
     if pathname != '/' and pathname[1:] in dashboard_df['dashboard'].values:
         return False
     return True
