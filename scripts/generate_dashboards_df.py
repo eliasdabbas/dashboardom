@@ -1,6 +1,7 @@
 import pandas as pd
 dashboard_df = pd.DataFrame({
     'dashboard': [
+        'us-baby-names',
         'advertools',
         'boxofficemojo',
         'health-spending',
@@ -14,6 +15,7 @@ dashboard_df = pd.DataFrame({
         "",
     ],
     'name': [
+        'US Baby Names',
         'advertools',
         'BoxofficeMojo',
         'Healthcare Spending 2014',
@@ -27,6 +29,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'description': [
+        'Annual births by name in the US 1910 - 2016',
         'Productivity and analysis tools for online marketing',
         'BoxofficeMojo domestic dox-office data all-time',
         'Healthcare spending by country in 2014',
@@ -40,6 +43,7 @@ dashboard_df = pd.DataFrame({
         'This website!',
     ],
     'data': [
+        'Social Security Agency',
         'NA',
         'BoxofficeMojo',
         'CIA World Factbook',
@@ -53,6 +57,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'data_link': [
+        'https://www.ssa.gov/oact/babynames/',
         'NA',
         'http://www.boxofficemojo.com/alltime/domestic.htm',
         'https://www.cia.gov/library/publications/the-world-factbook/fields/2225.html',
@@ -66,6 +71,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'tags': [
+        'population, statistics, data-viz, names',
         'advertising, tools, marketing, adwords, bingads',
         'movies, hollywood, data-viz',
         'healthcare, world, cia-factbook',
@@ -79,6 +85,7 @@ dashboard_df = pd.DataFrame({
         'tools, website',
     ],
     'git_repo': [
+        'https://github.com/eliasdabbas/baby_names',
         'https://github.com/eliasdabbas/advertools_app',
         'https://github.com/eliasdabbas/boxofficemojo',
         'https://github.com/eliasdabbas/health_spending',
