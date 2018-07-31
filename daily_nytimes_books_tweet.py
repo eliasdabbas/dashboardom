@@ -25,7 +25,7 @@ home_timeline = twitter.get_home_timeline(tweet_mode='extended')
 latest_books_tweet_id = [x for x in home_timeline if '#NYTimes Bestselling' in x['full_text']][0]['id']
 
 
-api_key = '0b9ebc445c094e53a2d3d4e290088248'
+api_key = os.environ['NYTIMES_API_KEY'] 
 base_url = 'https://api.nytimes.com/svc/books/v3/lists.json?api-key='
 amzn_aff_id = 'tag=ed076-20'
 nyt_logo_img = 'poweredby_nytimes_200a.png'
