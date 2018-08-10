@@ -156,5 +156,5 @@ img_hashtags = twitter.upload_media(media=open(figure_titles[1] + ' ' + datetime
 img_mentions = twitter.upload_media(media=open(figure_titles[2] + ' ' + datetime.datetime.strftime(now, '%A %d %b %Y - %H:%M:%S UTC') + '.png', 'rb'))
 
 twitter.update_status(status=final_tweet,
-    in_reply_to_status_id=latest_trump_tweet_id,
+#     in_reply_to_status_id=latest_trump_tweet_id,
     media_ids=[x['media_id'] for x in [img_words, img_hashtags, img_mentions]])

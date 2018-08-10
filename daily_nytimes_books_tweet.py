@@ -104,5 +104,5 @@ tweet = tweet_header + '\n' + tweet_links[:tweet_links[:remaining_len].rfind('\n
 chart_img_file = resp.json()['results'][0]['list_name'] + resp.json()['results'][0]['bestsellers_date']
 media = twitter.upload_media(media=open(chart_img_file + '.png', 'rb'))
 twitter.update_status(status=tweet, 
-                      in_reply_to_status_id=latest_books_tweet_id,
+#                       in_reply_to_status_id=latest_books_tweet_id,
                       media_ids=[media['media_id']])
