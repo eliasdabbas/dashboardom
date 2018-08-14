@@ -62,7 +62,7 @@ df_replies = pd.DataFrame({
 
 word_freq_responses = adv.word_frequency(df_replies['tweet_text'], 
                    df_replies['user_followers_count'],
-                   rm_words=adv.stopwords['english'] + ['@realdonaldtrump', "it’s"])
+                   rm_words=adv.stopwords['english'] + ['@realdonaldtrump', "it’s", '&'])
 word_freq_hashtags = adv.word_frequency([' '.join(x) for x in df_replies['hashtags']], 
                    df_replies['user_followers_count'])
 word_freq_mentions = adv.word_frequency([' '.join(x) for x in df_replies['mentions']], 
