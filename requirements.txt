@@ -32,6 +32,8 @@ python-dateutil==2.7.2
 pytz==2018.4
 requests==2.19.1
 requests-oauthlib==1.0.0
+scipy==1.1.0
+seaborn==0.9.0
 six==1.11.0
 traitlets==4.3.2
 twython==3.7.0
