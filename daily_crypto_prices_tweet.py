@@ -91,7 +91,7 @@ for i in range(3):
     fig.savefig(fname=widths[i] + '.png', dpi=150, facecolor='#fafafa')
     plt.close()
 
-tweet_header = '#CryptoCurrency prices for ' + datetime.datetime.strftime(timestamp, format='%a. %b. %d, %Y')
+tweet_header = '#CryptoCurrency prices for ' + datetime.datetime.strftime(timestamp, format='%a. %b. %d, %Y') + '\nMore data: http://bit.ly/2OyQi5u'
 
 tweet_details = ('#' + df['name'].str.replace(' ', '') + 
                  ' ' + '$' + df['symbol'] + ': $' + 
@@ -108,5 +108,5 @@ img_pct_of_tot_mkt_cap = twitter.upload_media(media=open('pct_of_tot_mkt_cap.png
 
 twitter.update_status(status='\n'.join([
     tweet_header, tweet_details[:details_upto]]),
-    in_reply_to_status_id=latest_crypto_tweet_id,
+#     in_reply_to_status_id=latest_crypto_tweet_id,
     media_ids=[x['media_id'] for x in [img_price, img_market_cap, img_pct_of_tot_mkt_cap]])
