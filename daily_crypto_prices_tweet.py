@@ -16,8 +16,8 @@ OAUTH_TOKEN_SECRET = os.environ['OAUTH_TOKEN_SECRET']
 
 twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
-home_timeline = twitter.get_home_timeline(tweet_mode='extended')
-latest_crypto_tweet_id = [x for x in home_timeline if '#CryptoCurrency prices' in x['full_text']][0]['id']
+# home_timeline = twitter.get_home_timeline(tweet_mode='extended')
+# latest_crypto_tweet_id = [x for x in home_timeline if '#CryptoCurrency prices' in x['full_text']][0]['id']
 
 resp = requests.get('https://api.coinmarketcap.com/v2/ticker/?limit=20')
 global_crypto = requests.get('https://api.coinmarketcap.com/v2/global/')
@@ -96,11 +96,8 @@ tweet_header = '#CryptoCurrency prices for ' + datetime.datetime.strftime(timest
 tweet_details = ('#' + df['name'].str.replace(' ', '') + 
                  ' ' + '$' + df['symbol'] + ': $' + 
                  df['price'].round(2).astype(str)).str.cat(sep='\n')
-remaining_len = 280 - len(tweet_header)
+remaining_len = 275 - len(tweet_header)
 details_upto = tweet_details[:remaining_len].rfind('\n')
-
-home_timeline = twitter.get_home_timeline(tweet_mode='extended')
-latest_crypto_tweet_id = [x for x in home_timeline if '#CryptoCurrency prices' in x['full_text']][0]['id']
 
 img_market_cap = twitter.upload_media(media=open('market_cap.png', 'rb'))
 img_price = twitter.upload_media(media=open('price.png', 'rb'))
