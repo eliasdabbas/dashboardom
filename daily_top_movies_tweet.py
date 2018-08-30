@@ -77,7 +77,7 @@ todate_img = twitter.upload_media(media=open('gross_todate.png', 'rb'))
 
 top_movies_text = 'Top #movies ' + datetime.datetime.strftime(yesterday, '%b %d\n') 
 # url = 'http://www.boxofficemojo.com/daily/chart/?view=1day&sortdate=' + yesterday_fmt
-url = 'http://bit.ly/boxoffice_dashboard'
+url = 'http://bit.ly/boxofficemojo'
 hashtags = ' '.join('#' + df['title'].str.replace(' |:|-|\'|!|\.|\?', ''))
 
 hashtags_clean = hashtags[:hashtags[:220].rfind(' ')] 
