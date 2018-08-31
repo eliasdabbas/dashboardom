@@ -21,16 +21,19 @@ twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 
 trump_replies = []
 
-for i in range(10):
-    temp = twitter.search(q='to:realdonaldtrump -filter:retweets',
-                          lang='en',
-                          result_type='recent',
-                          count=100,
-                          trim_user=False,
-                          include_entities=True,
-                          max_id=None if i == 0 else [x['id'] for x in trump_replies[-1]['statuses']][-1] - 1,
-                          tweet_mode='extended')
-    trump_replies.append(temp)
+for i in range(50):
+    try:
+        temp = twitter.search(q='to:realdonaldtrump -filter:retweets',
+                              lang='en',
+                              result_type='recent',
+                              count=100,
+                              trim_user=False,
+                              include_entities=True,
+                              max_id=None if i == 0 else [x['id'] for x in trump_replies[-1]['statuses']][-1] - 1,
+                              tweet_mode='extended')
+        trump_replies.append(temp)
+    except Exception as e:
+        break
 
 tweet_text_replies = []
 user_name_replies = []
@@ -92,6 +95,7 @@ prefixes = [
     '#',
     '@'
 ]
+
 for i in range(3):
     fig, ax = plt.subplots(1, 2)
     fig.set_size_inches((12, 14), forward=True)
@@ -136,20 +140,24 @@ for i in range(3):
     fig.savefig(fname=figure_titles[i] + ' ' + datetime.datetime.strftime(now, '%A %d %b %Y - %H:%M:%S UTC') + '.png', 
                 dpi=150, bbox_inches='tight',
                 facecolor='#f0f0f0', )
-
+    
 tweet_header = ('How did people respond to @realDonaldTrump tweets today?\n' + 
                 datetime.datetime.strftime(now, '%A %d %b %Y %H:%M:%S UTC'))
 remaining_len = 280 - len(tweet_header)
 top_hashtags =  '\n'.join('#' + word_freq_hashtags['word'].head(6)) 
-top_tweeters = ' '.join('@' + df_replies['user_screen_name'].value_counts().to_frame().reset_index()['index'].head(6))
-final_tweet = tweet_header + '\nTop hashtags:\n' + top_hashtags +'\nMost active accounts:\n' + top_tweeters
+top_tweeters = '\n'.join('@' + (df_replies
+                                .groupby('user_screen_name', as_index=False)
+                                .sum()
+                                .sort_values(['user_followers_count'], ascending=False)
+                                .head(6)['user_screen_name']))
+final_tweet = tweet_header + '\nTop hashtags:\n' + top_hashtags +'\nMost influential accounts:\n' + top_tweeters
 
 if len(final_tweet) > 280:
     last_space = max(final_tweet[:280].rfind(' '), final_tweet[:280].rfind('\n'))
     final_tweet = final_tweet[:last_space]
 
-home_timeline = twitter.get_home_timeline(tweet_mode='extended', count=200)
-latest_trump_tweet_id = [x for x in home_timeline if '@realDonaldTrump tweets today' in x['full_text']][0]['id']
+# home_timeline = twitter.get_home_timeline(tweet_mode='extended', count=200)
+# latest_trump_tweet_id = [x for x in home_timeline if '@realDonaldTrump tweets today' in x['full_text']][0]['id']
 
 img_words = twitter.upload_media(media=open(figure_titles[0] + ' ' + datetime.datetime.strftime(now, '%A %d %b %Y - %H:%M:%S UTC') + '.png', 'rb'))
 img_hashtags = twitter.upload_media(media=open(figure_titles[1] + ' ' + datetime.datetime.strftime(now, '%A %d %b %Y - %H:%M:%S UTC') + '.png', 'rb'))
