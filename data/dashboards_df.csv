@@ -1,4 +1,5 @@
 dashboard,name,description,data,data_link,tags,git_repo
+trending-twitter,"Trending on Twitter Now, Anywhere",Trending hashtags and topics on Twitter - all locations,Twitter API,NA,"twitter, social",https://github.com/eliasdabbas/trending-twitter
 us-baby-names,US Baby Names,Annual births by name in the US 1910 - 2016,Social Security Agency,https://www.ssa.gov/oact/babynames/,"population, statistics, data-viz, names",https://github.com/eliasdabbas/baby_names
 advertools,advertools,Productivity and analysis tools for online marketing,NA,NA,"advertising, tools, marketing, adwords, bingads",https://github.com/eliasdabbas/advertools_app
 boxofficemojo,BoxofficeMojo,BoxofficeMojo domestic dox-office data all-time,BoxofficeMojo,http://www.boxofficemojo.com/alltime/domestic.htm,"movies, hollywood, data-viz",https://github.com/eliasdabbas/boxofficemojo

@@ -9,6 +9,36 @@ app = dash.Dash()
 server = app.server
 app.title = 'Interactive Dashboards | Dashboardom'
 
+app.index_string = """
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+    </head>
+    <body>
+    <h1 font-size=40><a href="/"> Dashboardom</a></h1>
+    <p>
+    <strong>dashboard:</strong> 
+             "noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form"
+
+
+    <strong>-dom:  </strong> wisdom, freedom, random... hopefully not boredom!
+
+    
+    
+    
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+        </footer>
+    </body>
+</html>
+"""
+
 
 link_style = {'text-decoration': 'underline',
               'color': '#0A4DCC'}
@@ -44,16 +74,16 @@ dashboard_components = html.Div([
 app.layout = html.Div([
     html.Div([
         html.Br(),
-        html.A('Dashboardom', style={'font-size': 40, 'text-decoration': 'none'}, 
-               href='/'),
-        html.Div([
-            html.Strong('dashboard: '),
-            "noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form"
-        ],),
-        html.Div([
-            html.Strong('-dom: '),
-            'wisdom, freedom, random... hopefully not boredom!'
-        ]),
+#         html.A('Dashboardom', style={'font-size': 40, 'text-decoration': 'none'}, 
+#                href='/'),
+#         html.Div([
+#             html.Strong('dashboard: '),
+#             "noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form"
+#         ],),
+#         html.Div([
+#             html.Strong('-dom: '),
+#             'wisdom, freedom, random... hopefully not boredom!'
+#         ]),
         html.P(),
         html.Hr(style={'width': '80%', 'align': 'center', 'color': '#efefef'}),
     ], style={'margin-left': '5%', }),
