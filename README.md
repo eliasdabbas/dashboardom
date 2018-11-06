@@ -1,6 +1,12 @@
 ## Dashboardom: a portfolio of Plotly - Dash apps / dashboards
 
+#### [Twitter Trending](https://www.dashboardom.com/trending-twitter)  
 
+
+Trending on Twitter now in for all available locations
+Data: [NA](NA)  
+Git repo: [https://github.com/eliasdabbas/trending-twitter](https://github.com/eliasdabbas/trending-twitter)  
+Tags: Twitter, social-media
 #### [US Baby Names](https://www.dashboardom.com/us-baby-names)  
 
 
