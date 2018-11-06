@@ -22,8 +22,8 @@ app.index_string = """
     <h1 font-size=40><a href="/"> Dashboardom</a></h1>
     <p>
     <strong>dashboard:</strong> 
-             "noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form"
-
+             noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form
+    <br>
 
     <strong>-dom:  </strong> wisdom, freedom, random... hopefully not boredom!
 
