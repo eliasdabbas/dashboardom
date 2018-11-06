@@ -1,6 +1,7 @@
 import pandas as pd
 dashboard_df = pd.DataFrame({
     'dashboard': [
+        'trending-twitter',
         'us-baby-names',
         'advertools',
         'boxofficemojo',
@@ -15,6 +16,7 @@ dashboard_df = pd.DataFrame({
         "",
     ],
     'name': [
+        'Trending on Twitter Now, Anywhere',
         'US Baby Names',
         'advertools',
         'BoxofficeMojo',
@@ -29,6 +31,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'description': [
+        'Trending hashtags and topics on Twitter - all locations',
         'Annual births by name in the US 1910 - 2016',
         'Productivity and analysis tools for online marketing',
         'BoxofficeMojo domestic dox-office data all-time',
@@ -43,6 +46,7 @@ dashboard_df = pd.DataFrame({
         'This website!',
     ],
     'data': [
+        'Twitter API',
         'Social Security Agency',
         'NA',
         'BoxofficeMojo',
@@ -57,6 +61,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'data_link': [
+        'NA',
         'https://www.ssa.gov/oact/babynames/',
         'NA',
         'http://www.boxofficemojo.com/alltime/domestic.htm',
@@ -71,6 +76,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'tags': [
+        'twitter, social', 
         'population, statistics, data-viz, names',
         'advertising, tools, marketing, adwords, bingads',
         'movies, hollywood, data-viz',
@@ -85,6 +91,7 @@ dashboard_df = pd.DataFrame({
         'tools, website',
     ],
     'git_repo': [
+        'https://github.com/eliasdabbas/trending-twitter',        
         'https://github.com/eliasdabbas/baby_names',
         'https://github.com/eliasdabbas/advertools_app',
         'https://github.com/eliasdabbas/boxofficemojo',
