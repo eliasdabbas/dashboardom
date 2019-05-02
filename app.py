@@ -5,7 +5,7 @@ from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
 
-app = dash.Dash()
+app = dash.Dash(__name__)
 server = app.server
 app.title = 'Interactive Dashboards | Dashboardom'
 
@@ -21,19 +21,20 @@ app.index_string = """
     <body>
     <h1 font-size=40><a href="/"> Dashboardom</a></h1>
     <p>
-    <strong>dashboard:</strong> 
+    <strong>dashboard:</strong>
              noun /ˈdæʃ.bɔːrd/ an interface with a current summary and controls, in graphic form
     <br>
 
     <strong>-dom:  </strong> wisdom, freedom, random... hopefully not boredom!
 
-    
-    
-    
+
+
+
         {%app_entry%}
         <footer>
             {%config%}
             {%scripts%}
+            {%renderer%}
         </footer>
     </body>
 </html>
@@ -170,4 +171,4 @@ app.scripts.append_script({
 })
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
