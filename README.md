@@ -1,5 +1,14 @@
 ## Dashboardom: a portfolio of Plotly - Dash apps / dashboards
 
+#### [Twitter Dashboard](https://www.dashboardom.com/twitterdash)  
+
+
+Search Twitter, Create a Dataset
+Data: [NA](NA)  
+Git repo: [https://github.com/eliasdabbas/twitterdash](https://github.com/eliasdabbas/twitterdash)  
+Tags: Twitter, social-media
+
+
 #### [Twitter Trending](https://www.dashboardom.com/trending-twitter)  
 
 
