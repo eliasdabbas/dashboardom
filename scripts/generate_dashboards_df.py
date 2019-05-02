@@ -1,6 +1,7 @@
 import pandas as pd
 dashboard_df = pd.DataFrame({
     'dashboard': [
+        'twitterdash',
         'trending-twitter',
         'us-baby-names',
         'advertools',
@@ -13,9 +14,10 @@ dashboard_df = pd.DataFrame({
         'mothersday-map',
         'pop-growth',
         'terrorism',
-        "",
+        '',
     ],
     'name': [
+        'Search Twitter, Create a Dataset',
         'Trending on Twitter Now, Anywhere',
         'US Baby Names',
         'advertools',
@@ -31,6 +33,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'description': [
+        'Search Twitter & generate a filterable downloadable dataset of tweets',
         'Trending hashtags and topics on Twitter - all locations',
         'Annual births by name in the US 1910 - 2016',
         'Productivity and analysis tools for online marketing',
@@ -47,6 +50,7 @@ dashboard_df = pd.DataFrame({
     ],
     'data': [
         'Twitter API',
+        'Twitter API',
         'Social Security Agency',
         'NA',
         'BoxofficeMojo',
@@ -62,6 +66,7 @@ dashboard_df = pd.DataFrame({
     ],
     'data_link': [
         'NA',
+        'NA',
         'https://www.ssa.gov/oact/babynames/',
         'NA',
         'http://www.boxofficemojo.com/alltime/domestic.htm',
@@ -76,7 +81,8 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'tags': [
-        'twitter, social', 
+        'twitter, social, text',
+        'twitter, social',
         'population, statistics, data-viz, names',
         'advertising, tools, marketing, adwords, bingads',
         'movies, hollywood, data-viz',
@@ -91,7 +97,8 @@ dashboard_df = pd.DataFrame({
         'tools, website',
     ],
     'git_repo': [
-        'https://github.com/eliasdabbas/trending-twitter',        
+        'https://github.com/eliasdabbas/twitterdash',
+        'https://github.com/eliasdabbas/trending-twitter',
         'https://github.com/eliasdabbas/baby_names',
         'https://github.com/eliasdabbas/advertools_app',
         'https://github.com/eliasdabbas/boxofficemojo',
@@ -106,5 +113,5 @@ dashboard_df = pd.DataFrame({
         'https://github.com/eliasdabbas/dashboardom'
     ]
 })
-
+dashboard_df
 dashboard_df.to_csv('data/dashboards_df.csv', index=False)
