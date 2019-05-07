@@ -1,4 +1,5 @@
 dashboard,name,description,data,data_link,tags,git_repo
+google-serp,Search Engine Results Pages - Google,"Get SERPs for multiple keywords and parameters, in one DataFrame",Google Custom Search Engine,https://developers.google.com/custom-search/v1/cse/list,"google, SEO, search engine optimization,",https://github.com/eliasdabbas/google-serp
 twitterdash,"Search Twitter, Create a Dataset",Search Twitter & generate a filterable downloadable dataset of tweets,Twitter API,NA,"twitter, social, text",https://github.com/eliasdabbas/twitterdash
 trending-twitter,"Trending on Twitter Now, Anywhere",Trending hashtags and topics on Twitter - all locations,Twitter API,NA,"twitter, social",https://github.com/eliasdabbas/trending-twitter
 us-baby-names,US Baby Names,Annual births by name in the US 1910 - 2016,Social Security Agency,https://www.ssa.gov/oact/babynames/,"population, statistics, data-viz, names",https://github.com/eliasdabbas/baby_names

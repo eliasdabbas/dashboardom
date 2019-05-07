@@ -1,6 +1,7 @@
 import pandas as pd
 dashboard_df = pd.DataFrame({
     'dashboard': [
+        'google-serp',
         'twitterdash',
         'trending-twitter',
         'us-baby-names',
@@ -17,6 +18,7 @@ dashboard_df = pd.DataFrame({
         '',
     ],
     'name': [
+        'Search Engine Results Pages - Google',
         'Search Twitter, Create a Dataset',
         'Trending on Twitter Now, Anywhere',
         'US Baby Names',
@@ -33,6 +35,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'description': [
+        'Get SERPs for multiple keywords and parameters, in one DataFrame',
         'Search Twitter & generate a filterable downloadable dataset of tweets',
         'Trending hashtags and topics on Twitter - all locations',
         'Annual births by name in the US 1910 - 2016',
@@ -49,6 +52,7 @@ dashboard_df = pd.DataFrame({
         'This website!',
     ],
     'data': [
+        'Google Custom Search Engine',
         'Twitter API',
         'Twitter API',
         'Social Security Agency',
@@ -65,6 +69,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'data_link': [
+        'https://developers.google.com/custom-search/v1/cse/list',
         'NA',
         'NA',
         'https://www.ssa.gov/oact/babynames/',
@@ -81,6 +86,7 @@ dashboard_df = pd.DataFrame({
         'NA',
     ],
     'tags': [
+        'google, SEO, search engine optimization,',
         'twitter, social, text',
         'twitter, social',
         'population, statistics, data-viz, names',
@@ -97,6 +103,7 @@ dashboard_df = pd.DataFrame({
         'tools, website',
     ],
     'git_repo': [
+        'https://github.com/eliasdabbas/google-serp',
         'https://github.com/eliasdabbas/twitterdash',
         'https://github.com/eliasdabbas/trending-twitter',
         'https://github.com/eliasdabbas/baby_names',
