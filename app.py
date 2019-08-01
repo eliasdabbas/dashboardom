@@ -104,7 +104,7 @@ app.layout = html.Div([
     
     html.P(), html.P(),
     html.Iframe(id='iframe',
-                style={'width': '92%', 'height': 1000, 'border': 'none',
+                style={'width': '96%', 'height': 1000, 'border': 'none',
                        'scrolling': 'no', 'margin-left': '4%'}),
     
     html.Div(id='dashboard_components',
