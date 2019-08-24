@@ -5,7 +5,11 @@ from dash.dependencies import Input, Output
 import plotly.graph_objs as go
 import pandas as pd
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__, serve_locally=False,
+                external_scripts=[
+        '//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons',
+        'https://cdn.rawgit.com/eliasdabbas/dashboardom/598ed983/scripts/gtag.js',
+    ])
 server = app.server
 app.title = 'Interactive Dashboards | Dashboardom'
 
@@ -163,12 +167,13 @@ def change_url_based_on_dropdown(value):
     if value is not None:
         return '/' + value
 
-app.scripts.append_script({
-    'external_url': [
-        '//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons',
-        'https://cdn.rawgit.com/eliasdabbas/dashboardom/598ed983/scripts/gtag.js',
-    ]
-})
+# app.scripts.append_script({
+#     'external_url': [
+#         '//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons',
+#         'https://cdn.rawgit.com/eliasdabbas/dashboardom/598ed983/scripts/gtag.js',
+#     ]
+# })
 
 if __name__ == '__main__':
+    print(app.scripts)
     app.run_server(debug=True)
