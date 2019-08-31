@@ -1,0 +1,90 @@
+{% extends 'bootstrap/base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %} {{ title }} Dashboard {% endblock title %}
+</head>
+{% block navbar %}
+  <nav class="navbar navbar-inverse" role="navigation"
+       style="margin-bottom: 0px">
+        <div class="container-fluid">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Dashboardom</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav"></ul>
+                        <ul class="nav navbar-nav navbar-right" style="display: flex">
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button" aria-haspopup="true"
+                               aria-expanded="false">
+                                More Dashboards<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" style="margin-bottom: 0px">
+                                {% for row in dashboard_df.to_dict('rows') %}
+                                    <li><a href="/{{ row['dashboard'] }}" title="{{ row['h2'] }}">{{ row['title'] }}</a></li>
+                                {% endfor %}
+                            </ul>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+{% endblock navbar %}
+
+{% block content %}
+
+<div class="container-fluid"; style="background-color: #e7e7e7">
+<div style="margin-left: 10%">
+  <h1>{{ h1 }}</h1>
+  <h2>{{ h2 }}</h2>
+</div>
+<div style="margin-left: 3.5%">
+  <iframe width="100%" height="800px" frameborder="none"
+          src="https://{{ dash_name }}.herokuapp.com"></iframe>
+</div>
+<p>
+<div style="margin-left: 5%">
+    <ul>
+        <li>Data source: <a href="{{ data_link }}">{{ data }}</a></li>
+        <li>Tags: {{ tags }}</li>
+        <li>Code: <a href="{{ git_repo }}" title="{{ h1 }}">Questions, bugs, suggestions more than welcome! </a> </li>
+    </ul>
+</div>
+</p>
+    <div>
+        <div style="margin-left: 8%">
+                <br>
+                <hr>
+                <strong>About</strong>
+                <br>
+                A collection of dashboards and apps, made by Elias Dabbas.
+                <br>
+                For data exploration, learning, fun, prototyping, and sharing.
+                <br>
+                Mostly made with Plotly's Dash (Python).
+        </div>
+        <div style="margin-left: 8%; horiz-align: left" class="sharethis-inline-follow-buttons"></div>
+    </div>
+</div>
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-1414950-14');
+    </script>
+{% endblock content %}
+</html>
