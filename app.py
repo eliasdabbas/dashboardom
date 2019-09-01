@@ -31,6 +31,11 @@ def name(dash_name):
         return render_template('home.html', dashboard_df=dashboard_df)
 
 
+@app.route('/tag/<tag>')
+def tag(tag):
+    return render_template('tags.html', tag=tag, dashboard_df=dashboard_df)
+
+
 @app.route('/googlebe42ea5ea9569ea7.html')
 def google_verification():
     return 'google-site-verification: googlebe42ea5ea9569ea7.html'
