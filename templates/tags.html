@@ -1,0 +1,49 @@
+{% extends 'bootstrap/base.html' %}
+{% include 'navigation.html' %}
+<head>
+    {% block head %}
+        {{ super() }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-1414950-14');
+            </script>
+    {% endblock head %}
+    {% block title %}
+        {{ tag.replace('-', ' ').title() }} Apps and Dashboards | Dashboardom
+    {% endblock title %}
+</head>
+{% block content %}
+<div style="background-color: #eeeeee">
+<div style="margin-left: 8%">
+    <br>
+    <br>
+<h1>{{ tag.replace('-', ' ').title() }} dashboards, apps, and tools</h1>
+        <p>
+
+</div>
+<div style="margin-left: 10%">
+    {% for row in dashboard_df.to_dict('rows') %}
+      {% if tag.lower() in row['tags'].lower() %}
+        <a href="{{ row['dashboard'] }}" title="{{ row['tags'] }}"><h3><li>{{ row['title']}}</li></h3></a>
+        {{ row['h2'] }}
+        <br>
+        Data: <a href="{{ row['data_link'] }}">{{ row['data'] }}</a>
+        <br>
+        Tags: {% for tag in row['tags'].split(', ') %}
+                <a href="/tag/{{ tag }}">{{ tag }}</a>,
+              {% endfor %}
+        <br>
+        Git repo: <a href="{{ row['git_repo'] }}">{{ row['git_repo'] }}</a>
+        <hr>
+    {% endif %}
+    {% endfor %}
+</div>
+   {% include 'footer.html' %}
+</div>
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
+{% endblock content %}
