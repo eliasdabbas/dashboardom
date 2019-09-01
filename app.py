@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 
 import pandas as pd
-dashboard_df = pd.read_csv('data/dashboards_df.csv')
+dashboard_df = pd.read_csv('data/dashboards_df.csv', keep_default_na=False)
 
 
 def create_app():
