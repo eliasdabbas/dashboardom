@@ -89,7 +89,7 @@ dashboard_df = pd.DataFrame({
         'Wikipedia',
         'CIA World Factbook',
         'START Consortium',
-        'NA',
+        ' ',
     ],
     'data_link': [
         'https://data.imf.org/',
@@ -107,7 +107,7 @@ dashboard_df = pd.DataFrame({
         'https://en.wikipedia.org/wiki/Mother%27s_Day',
         'https://www.cia.gov/library/publications/the-world-factbook/fields/2002.html',
         'https://www.kaggle.com/START-UMD/gtd',
-        'NA',
+        ' ',
     ],
     'tags': [
         'gold, economics, IMF',
