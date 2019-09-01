@@ -62,7 +62,7 @@ dashboard_df = pd.DataFrame({
         'Trending hashtags and topics on Twitter - all locations',
         'Annual births by name in the US 1910 - 2016',
         'Productivity and analysis tools for online marketing',
-        'BoxofficeMojo domestic dox-office data all-time',
+        'BoxofficeMojo domestic box-office data all-time',
         'Healthcare spending by country in 2014',
         'Life expectancy per country in 2017',
         'Wikipedia\'s list of events named massacres',
