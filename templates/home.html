@@ -31,12 +31,14 @@
 </div>
 <div style="margin-left: 10%">
     {% for row in dashboard_df.to_dict('rows') %}
-        <a href="{{ row['dashboard'] }}"><h3><li>{{ row['title']}}</li></h3></a>
+        <a href="{{ row['dashboard'] }}" title="{{ row['tags'] }}"><h3><li>{{ row['title']}}</li></h3></a>
         {{ row['h2'] }}
         <br>
         Data: <a href="{{ row['data_link'] }}">{{ row['data'] }}</a>
         <br>
-        Tags: {{ row['tags'] }}
+        Tags: {% for tag in row['tags'].split(', ') %}
+                <a href="/tag/{{ tag }}">{{ tag }}</a>,
+              {% endfor %}
         <br>
         Git repo: <a href="{{ row['git_repo'] }}">{{ row['git_repo'] }}</a>
         <hr>
