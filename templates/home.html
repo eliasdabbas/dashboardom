@@ -1,5 +1,22 @@
 {% extends 'bootstrap/base.html' %}
 {% include 'navigation.html' %}
+<head>
+    {% block head %}
+        {{ super() }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-1414950-14');
+            </script>
+    {% endblock head %}
+    {% block title %}
+        Interactive data and online marketing dashboards and apps | Dashboardom
+    {% endblock title %}
+</head>
 {% block content %}
 <div style="background-color: #eeeeee">
 <div style="margin-left: 8%">
@@ -28,13 +45,4 @@
    {% include 'footer.html' %}
 </div>
     <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-1414950-14');
-    </script>
 {% endblock content %}

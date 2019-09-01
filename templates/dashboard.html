@@ -1,8 +1,19 @@
 {% extends 'bootstrap/base.html' %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    {% block title %} {{ title }} Dashboard {% endblock title %}
+    {% block head %}
+        {{ super() }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'UA-1414950-14');
+            </script>
+            <meta charset="UTF-8">
+    {% endblock head %}
+{% block title %} {{ title }} Dashboard {% endblock title %}
 </head>
 {% include 'navigation.html' %}
 {% block content %}
@@ -29,13 +40,5 @@
 {% include 'footer.html' %}
 </div>
     <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-1414950-14');
-    </script>
 {% endblock content %}
 </html>
