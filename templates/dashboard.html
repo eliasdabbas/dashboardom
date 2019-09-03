@@ -1,24 +1,9 @@
-{% extends 'bootstrap/base.html' %}
+{% extends 'base.html' %}
 <html lang="en">
-<head>
-    {% block head %}
-        {{ super() }}
-            <!-- Global site tag (gtag.js) - Google Analytics -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
-            <script>
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'UA-1414950-14');
-            </script>
-            <meta charset="UTF-8">
-    {% endblock head %}
-{% block title %} {{ title }} Dashboard {% endblock title %}
-</head>
-{% include 'navigation.html' %}
-{% block content %}
-
-<div class="container-fluid"; style="background-color: #e7e7e7">
+    {% block title %} {{ title }} Dashboard
+    {% endblock title %}
+{% block page_content %}
+    {{ super() }}
 <div style="margin-left: 10%">
   <h1>{{ h1 }}</h1>
   <h2>{{ h2 }}</h2>
@@ -32,13 +17,11 @@
 <div style="margin-left: 5%">
     <ul>
         <li>Data source: <a href="{{ data_link }}">{{ data }}</a></li>
-        <li>Tags: {{ tags }}</li>
+        <li>Tags: {% for tag in tags.split(', ') %}
+                <a href="/tag/{{ tag }}">{{ tag }}</a>,
+              {% endfor %}</li>
         <li>Code: <a href="{{ git_repo }}" title="{{ h1 }}">Questions, bugs, suggestions more than welcome! </a> </li>
     </ul>
 </div>
-</p>
-{% include 'footer.html' %}
-</div>
-    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
-{% endblock content %}
+{% endblock page_content %}
 </html>
