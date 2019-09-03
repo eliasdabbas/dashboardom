@@ -115,7 +115,7 @@ dashboard_df = pd.DataFrame({
         'twitter, social media, text mining',
         'twitter, social media',
         'population, statistics, data-viz, names, USA',
-        'advertising, PPC, marketing, adwords, bingads, SEM',
+        'advertising, PPC, marketing, adwords, bingads, SEM, keywords',
         'movies, hollywood, box-office',
         'healthcare, world, cia-factbook',
         'population, age, world, cia-factbook',

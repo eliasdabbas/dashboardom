@@ -1,0 +1,30 @@
+{% extends 'bootstrap/base.html' %}
+    {% block head %}
+        {{ super() }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1414950-14"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-1414950-14');
+            </script>
+    {% endblock head %}
+{% block scripts %}
+    {{ super() }}
+    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5ae10d5b688e0f0017268884&product=inline-follow-buttons"></script>
+{% endblock scripts %}
+{% block navbar %}
+    {% include 'navigation.html' %}
+{% endblock navbar %}
+
+{% block content %}
+    <div class="container-fluid"; style="background-color: #e7e7e7">
+        {% block page_content %}{% endblock page_content %}
+    </div>
+    <div class="container-fluid"; style="background-color: #e7e7e7">
+    {% include 'footer.html' %}
+    </div>
+{% endblock content %}
+
