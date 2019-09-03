@@ -144,6 +144,24 @@ dashboard_df = pd.DataFrame({
         'https://github.com/eliasdabbas/population_growth',
         'https://github.com/eliasdabbas/terrorism',
         'https://github.com/eliasdabbas/dashboardom'
+    ],
+    'height': [
+        '800px',
+        '1300px',
+        '800px',
+        '800px',
+        '700px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
+        '800px',
     ]
 })
 
