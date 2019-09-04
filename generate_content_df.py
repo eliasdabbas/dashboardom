@@ -146,8 +146,8 @@ dashboard_df = pd.DataFrame({
         'https://github.com/eliasdabbas/dashboardom'
     ],
     'height': [
-        '800px',
-        '1300px',
+        '1561px',
+        '1338px',
         '800px',
         '800px',
         '700px',
