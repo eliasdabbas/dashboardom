@@ -28,7 +28,7 @@ def name(dash_name):
                                dashboards=dashboard_df['dashboard'],
                                dashboard_df=dashboard_df)
     except Exception:
-        return render_template('home.html', dashboard_df=dashboard_df)
+        return render_template('404.html', dashboard_df=dashboard_df)
 
 
 @app.route('/tag/<tag>')
