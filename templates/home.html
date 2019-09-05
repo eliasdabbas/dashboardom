@@ -14,20 +14,25 @@
     <br>
     <strong>-dom:  </strong> wisdom, freedom, random... hopefully not boredom!
 </div>
-<div style="margin-left: 10%">
-    {% for row in dashboard_df.to_dict('rows') %}
-        <a href="{{ row['dashboard'] }}" title="{{ row['tags'] }}"><h3><li>{{ row['title']}}</li></h3></a>
-        {{ row['h2'] }}
-        <br>
-        Data: <a href="{{ row['data_link'] }}">{{ row['data'] }}</a>
-        <br>
-        Tags: {% for tag in row['tags'].split(', ') %}
-                <a href="/tag/{{ tag }}">{{ tag }}</a>,
-              {% endfor %}
-        <br>
-        Git repo: <a href="{{ row['git_repo'] }}">{{ row['git_repo'] }}</a>
-        <hr>
-    {% endfor %}
-</div>
+    <div class="container">
+        <div class="col col-lg-7">
+            {% for row in dashboard_df.to_dict('rows') %}
+                <a href="{{ row['dashboard'] }}" title="{{ row['tags'] }}"><h3><li>{{ row['title']}}</li></h3></a>
+                {{ row['h2'] }}
+                <br>
+                Data: <a href="{{ row['data_link'] }}">{{ row['data'] }}</a>
+                <br>
+                Tags: {% for tag in row['tags'].split(', ') %}
+                        <a href="/tag/{{ tag }}">{{ tag }}</a>,
+                      {% endfor %}
+                <br>
+                Git repo: <a href="{{ row['git_repo'] }}">{{ row['git_repo'] }}</a>
+                <hr>
+            {% endfor %}
+        </div>
+        <div class="col col-lg-5">
+            {% include 'tag_links.html' %}
+        </div>
+    </div>
 </div>
 {% endblock page_content %}

@@ -1,0 +1,6 @@
+<h3>Dashboard Tags:</h3>
+<br>
+{% for tag, count in  tag_counts %}
+    <a href="/tag/{{ tag }}" title="{{ tag }} dashboards">{{ tag }}</a> ({{ count }}),
+{% endfor %}
+<hr>
