@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf%}
+{% block title %}
+    Contact | Dashboardom
+{% endblock title %}
+
+{% block page_content %}
+    <div style="margin-left: 10%" class="col-lg-4">
+    <br>
+    <h2>Get in touch</h2>
+    Recommendations, questions, suggestions, more than welcome.
+        <br><br>
+    {{ wtf.quick_form(form) }}
+    <br><br><br><br><br><br><br><br><br><br>
+    </div>
+{% endblock page_content %}
+
