@@ -1,3 +1,5 @@
+import os
+
 from collections import Counter
 
 from flask import Flask, render_template, session, redirect, url_for
@@ -25,7 +27,7 @@ def create_app():
 
 
 app = create_app()
-app.config['SECRET_KEY'] = 'my secret key'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 
 
 @app.route('/')
