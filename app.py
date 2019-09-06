@@ -4,6 +4,7 @@ from collections import Counter
 
 from flask import Flask, render_template, session, redirect, url_for
 from flask_bootstrap import Bootstrap
+from flask_mail import Mail, Message
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired, Email
@@ -27,7 +28,25 @@ def create_app():
 
 
 app = create_app()
+
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['DASHBOARDOM_MAIL_SUBJECT_PREFIX'] = '[Dashboardom]'
+app.config['DASHBOARDOM_MAIL_SENDER'] = 'Dashboardom Admin <dashboardommail@gmail.com>'
+
+mail = Mail(app)
+
+
+def send_email(to, subject, template, **kwargs):
+    msg = Message(subject,
+                  sender=app.config['DASHBOARDOM_MAIL_SENDER'],
+                  recipients=[to])
+    msg.html = render_template(template + '.html', **kwargs)
+    mail.send(msg)
 
 
 @app.route('/')
@@ -61,6 +80,12 @@ def contact():
     form = ContactForm()
     if form.validate_on_submit():
         session['name'] = form.name.data
+        send_email('eliasdabbas@gmail.com',
+                   'Dashboardom inquiry',
+                   'contact_email',
+                   name=form.name.data,
+                   from_email=form.email.data,
+                   msg=form.message.data)
         return redirect(url_for('contact_thankyou'))
     return render_template('contact.html', form=form,
                            dashboard_df=dashboard_df)
