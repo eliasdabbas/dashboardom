@@ -3,8 +3,9 @@ import os
 from collections import Counter
 from datetime import datetime
 from threading import Thread
+from urllib.parse import urlparse, urlunparse
 
-from flask import Flask, render_template, session, redirect, url_for
+from flask import Flask, render_template, session, redirect, url_for, request
 from flask_bootstrap import Bootstrap
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
@@ -86,6 +87,17 @@ def send_email(to, subject, template, **kwargs):
     thr = Thread(target=send_async_email, args=[app, msg])
     thr.start()
     return thr
+
+
+@app.before_request
+def redirect_nonwww():
+    """Redirect non-www requests to www."""
+    urlparts = urlparse(request.url)
+    if 'www' in urlparts.netloc:
+        urlparts_list = list(urlparts)
+        print(urlparts_list)
+        urlparts_list[1] = 'www.dashboardom.com'
+        return redirect(urlunparse(urlparts_list), code=301)
 
 
 @app.shell_context_processor
