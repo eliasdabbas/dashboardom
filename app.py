@@ -93,7 +93,7 @@ def send_email(to, subject, template, **kwargs):
 def redirect_nonwww():
     """Redirect non-www requests to www."""
     urlparts = urlparse(request.url)
-    if 'www' in urlparts.netloc:
+    if 'www' not in urlparts.netloc:
         urlparts_list = list(urlparts)
         print(urlparts_list)
         urlparts_list[1] = 'www.dashboardom.com'
