@@ -3,9 +3,8 @@ import os
 from collections import Counter
 from datetime import datetime
 from threading import Thread
-# from urllib.parse import urlparse, urlunparse
 
-from flask import Flask, render_template, session, redirect, url_for, request
+from flask import Flask, render_template, session, redirect, url_for, abort
 from flask_bootstrap import Bootstrap
 from flask_mail import Mail, Message
 from flask_migrate import Migrate
@@ -113,21 +112,27 @@ def home():
                                              reverse=True))
 
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('404.html', dashboard_df=dashboard_df)
+
+
 @app.route('/<dash_name>')
 def name(dash_name):
     dash_df = dashboard_df[dashboard_df['dashboard'] == dash_name]
-    try:
-        return render_template(template_name_or_list='dashboard.html',
-                               dash_name=dash_name,
-                               **dash_df.to_dict('rows')[0],
-                               dashboards=dashboard_df['dashboard'],
-                               dashboard_df=dashboard_df)
-    except Exception:
-        return render_template('404.html', dashboard_df=dashboard_df)
+    if dash_df.empty:
+        abort(404)
+    return render_template(template_name_or_list='dashboard.html',
+                           dash_name=dash_name,
+                           **dash_df.to_dict('rows')[0],
+                           dashboards=dashboard_df['dashboard'],
+                           dashboard_df=dashboard_df)
 
 
 @app.route('/tag/<tag>')
 def tag(tag):
+    if not bool(dashboard_df['tags'].str.contains(tag).any()):
+        abort(404)
     return render_template('tags.html', tag=tag, dashboard_df=dashboard_df)
 
 
