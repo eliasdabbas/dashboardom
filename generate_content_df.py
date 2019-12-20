@@ -1,6 +1,7 @@
 import pandas as pd
 dashboard_df = pd.DataFrame({
     'dashboard': [
+        'migration-population',
         'gold-reserves',
         'google-serp',
         'twitterdash',
@@ -19,6 +20,7 @@ dashboard_df = pd.DataFrame({
         '',
     ],
     'title': [
+        'Migration and Population Density - WorldBank Data',
         'Gold Reserves per Country & Quarter - IMF Data',
         'Search Engine Results Pages - Google SERP Dashboard',
         'Twitter Dashboard - Text Analysis & Mining - Twitter API',
@@ -37,6 +39,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'h1': [
+        'Migration Stats by Country and Year',
         'Gold Reserves per Country & Quarter',
         'Search Engine Results Pages - Google',
         'Search and Analyze Twitter, Create a Dataset',
@@ -55,6 +58,7 @@ dashboard_df = pd.DataFrame({
         'Dashboardom',
     ],
     'h2': [
+        'Visualize changes in population density and migration',
         'Analyze changes in official gold reserves - IMF Data',
         'Get SERPs for multiple keywords and parameters, in one DataFrame',
         'Search Twitter & generate a filterable downloadable dataset of tweets',
@@ -73,6 +77,7 @@ dashboard_df = pd.DataFrame({
         'This website!',
     ],
     'data': [
+        'WorldBank',
         'International Monetary Fund',
         'Google Custom Search Engine',
         'Twitter API',
@@ -91,6 +96,7 @@ dashboard_df = pd.DataFrame({
         ' ',
     ],
     'data_link': [
+        'https://data.worldbank.org/',
         'https://data.imf.org/',
         'https://developers.google.com/custom-search/v1/cse/list',
         'https://developer.twitter.com',
@@ -109,6 +115,7 @@ dashboard_df = pd.DataFrame({
         ' ',
     ],
     'tags': [
+        'population, migration, world',
         'gold, economics, IMF, central banks',
         'google, SEO, search engine optimization, keywords',
         'twitter, social media, text mining',
@@ -127,6 +134,7 @@ dashboard_df = pd.DataFrame({
         'tools, website',
     ],
     'git_repo': [
+        'https://github.com/eliasdabbas/migration-population',
         'https://github.com/eliasdabbas/gold-reserves',
         'https://github.com/eliasdabbas/google-serp',
         'https://github.com/eliasdabbas/twitterdash',
@@ -145,6 +153,7 @@ dashboard_df = pd.DataFrame({
         'https://github.com/eliasdabbas/dashboardom'
     ],
     'height': [
+        '1336px',
         '1561px',
         '1338px',
         '1735px',
