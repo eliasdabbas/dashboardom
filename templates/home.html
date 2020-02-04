@@ -16,7 +16,7 @@
 </div>
     <div class="container">
         <div class="col col-lg-7">
-            {% for row in dashboard_df.to_dict('rows') %}
+            {% for row in dashboard_df.sample(n=dashboard_df.__len__()).to_dict('rows') %}
                 <a href="{{ row['dashboard'] }}" title="{{ row['tags'] }}"><h3><li>{{ row['title']}}</li></h3></a>
                 {{ row['h2'] }}
                 <br>
