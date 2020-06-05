@@ -17,17 +17,18 @@ dashboard_df = pd.DataFrame({
         'mothersday-map',
         'pop-growth',
         'terrorism',
+        'robotstxt',
         '',
     ],
     'title': [
         'Migration and Population Density - WorldBank Data',
         'Gold Reserves per Country & Quarter - IMF Data',
-        'Search Engine Results Pages - Google SERP Dashboard',
+        '🔎 Search Engine Results Pages - Google SERP Dashboard',
         'Twitter Dashboard - Text Analysis & Mining - Twitter API',
         'Trending on Twitter Now, Anywhere - Twitter Dashboard',
-        'US Baby Names Data & Trends',
+        '🇺🇸👶 US Baby Names Data & Trends',
         'Generate SEM Keywords for AdWords Campaigns',
-        'BoxofficeMojo Dashboard Alltime Data',
+        '🎥 BoxofficeMojo Dashboard Alltime Data',
         'Healthcare Spending 2014 - CIA Factbook',
         'Life Expectancy 2017 - CIA Factbook',
         'World Massacres',
@@ -36,17 +37,18 @@ dashboard_df = pd.DataFrame({
         'Mothers Day Celebrations',
         'Population Growth 2017 - CIA Factbook',
         'Global Terrorism Database',
+        '🤖 robots.txt Tester for Large Scale Testing',
         'Dashboardom',
     ],
     'h1': [
         'Migration Stats by Country and Year',
         'Gold Reserves per Country & Quarter',
-        'Search Engine Results Pages - Google',
+        '🔎 Search Engine Results Pages - Google',
         'Search and Analyze Twitter, Create a Dataset',
         'Trending on Twitter Now, Anywhere',
-        'US Baby Names',
+        '🇺🇸👶 US Baby Names',
         'SEM Keyword Generator',
-        'BoxofficeMojo Dashboard Alltime Data',
+        '🎥 BoxofficeMojo Dashboard Alltime Data',
         'Healthcare Spending 2014 - CIA Factbook',
         'Life Expectancy 2017 - CIA Factbook',
         'World Massacres',
@@ -55,6 +57,7 @@ dashboard_df = pd.DataFrame({
         'Mothers Day Celebrations',
         'Population Growth 2017 - CIA Factbook',
         'Global Terrorism Database',
+        '🤖 robots.txt Tester for Large Scale Testing',
         'Dashboardom',
     ],
     'h2': [
@@ -74,6 +77,7 @@ dashboard_df = pd.DataFrame({
         'Mothers day celebrations in the world',
         'Population growth per country in 2017',
         'World terrorist attacks during 1970 - 2016',
+        'For a given robots.txt file check which URLs can be fetched for all user-agents in the file',
         'This website!',
     ],
     'data': [
@@ -93,6 +97,7 @@ dashboard_df = pd.DataFrame({
         'Wikipedia',
         'CIA World Factbook',
         'START Consortium',
+        'advertools robotstxt module',
         ' ',
     ],
     'data_link': [
@@ -112,6 +117,7 @@ dashboard_df = pd.DataFrame({
         'https://en.wikipedia.org/wiki/Mother%27s_Day',
         'https://www.cia.gov/library/publications/the-world-factbook/fields/2002.html',
         'https://www.kaggle.com/START-UMD/gtd',
+        'https://advertools.readthedocs.io/en/master/advertools.robotstxt.html',
         ' ',
     ],
     'tags': [
@@ -131,6 +137,7 @@ dashboard_df = pd.DataFrame({
         'world, mothers, wikipedia',
         'population, world, cia-factbook',
         'terrorism, world',
+        'google, SEO, robots.txt, search engine optimization',
         'tools, website',
     ],
     'git_repo': [
@@ -150,6 +157,7 @@ dashboard_df = pd.DataFrame({
         'https://github.com/eliasdabbas/mothers_day',
         'https://github.com/eliasdabbas/population_growth',
         'https://github.com/eliasdabbas/terrorism',
+        'https://github.com/eliasdabbas/robotstxt_app',
         'https://github.com/eliasdabbas/dashboardom'
     ],
     'height': [
@@ -169,6 +177,7 @@ dashboard_df = pd.DataFrame({
         '800px',
         '1500px',
         '2360px',
+        '980px',
         '800px',
     ]
 })
