@@ -28,7 +28,7 @@ jupyter-core==4.4.0
 Mako==1.1.0
 MarkupSafe==1.1.1
 nbformat==4.4.0
-numpy==1.16.3
+numpy==1.22.0
 pandas==0.25.1
 plotly==3.8.1
 pyrsistent==0.15.1
